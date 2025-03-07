@@ -7,7 +7,7 @@ vector<bool> isPrime(1000001, true);
 vector<int> odd;
 
 void oddPrime() {
-    //1000000 ÀÌÇÏÀÇ ¸ğµç ¼Ò¼ö¸¦ ±¸ÇØ³õ±â 
+    //1000000 ì´í•˜ì˜ ëª¨ë“  ì†Œìˆ˜ë¥¼ êµ¬í•´ë†“ê¸° 
     for (int i = 2; i <= 1000000; i++) {
         if (!isPrime[i]) continue;
         for (int j = i * 2; j <= 1000000; j += i) {
@@ -15,15 +15,15 @@ void oddPrime() {
         }
     }
 
-    // È¦¼ö¸¸ ÀúÀå
+    // í™€ìˆ˜ë§Œ ì €ì¥
     for (int i = 3; i <= 1000000; i += 2) {
         if (isPrime[i]) odd.push_back(i);
     }
 }
 
 void goldbach(int n) {
-    //a°¡ °¡Àå ÀÛÀº °ªÀÌ¸é b-a°¡ ÃÖ´ëÀÏ °ÍÀÌ¹Ç·Î ±× °æ¿ì¸¦ Ãâ·Â
-    bool isWrong = true; //ÇÕÀÌ ¾ø´Â °æ¿ì Ã¼Å©
+    //aê°€ ê°€ì¥ ì‘ì€ ê°’ì´ë©´ b-aê°€ ìµœëŒ€ì¼ ê²ƒì´ë¯€ë¡œ ê·¸ ê²½ìš°ë¥¼ ì¶œë ¥
+    bool isWrong = true; //í•©ì´ ì—†ëŠ” ê²½ìš° ì²´í¬
 
     for (int a : odd) {
         int b = n - a;

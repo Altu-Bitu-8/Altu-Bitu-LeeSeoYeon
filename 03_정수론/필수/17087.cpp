@@ -3,14 +3,14 @@
 #include <algorithm>
 using namespace std;
 
-//A-S°¡ D·Î ³ª´©¾î¶³¾îÁø´Ù¸é ¼öºóÀÌ´Â µ¿»ýÀ» Ã£À» ¼ö ÀÖ´Ù
-// >> A-SµéÀÇ ÃÖ´ë°ø¾à¼ö¸¦ ±¸ÇÑ´Ù
+//A-Sê°€ Dë¡œ ë‚˜ëˆ„ì–´ë–¨ì–´ì§„ë‹¤ë©´ ìˆ˜ë¹ˆì´ëŠ” ë™ìƒì„ ì°¾ì„ ìˆ˜ ìžˆë‹¤
+// >> A-Së“¤ì˜ ìµœëŒ€ê³µì•½ìˆ˜ë¥¼ êµ¬í•œë‹¤
 
 
 int howsD(vector<int>& A, int N, int S) {
-    int gcd = abs(A[0] - S); //Àý´ñ°ª 
-    //Ã¹ ¿¬»êÀ¸·Î A[0], A[1]ÀÇ ÃÖ´ë°ø¾à¼ö¸¦ ±¸ÇÑ ÈÄ
-    //³ª¿Â ÃÖ´ë°ø¾à¼ö¿Í µÞ ¿ø¼ÒµéÀÇ ÃÖ´ë°ø¾à¼ö¸¦ ±¸ÇÏ¸é µÊ
+    int gcd = abs(A[0] - S); //ì ˆëŒ“ê°’ 
+    //ì²« ì—°ì‚°ìœ¼ë¡œ A[0], A[1]ì˜ ìµœëŒ€ê³µì•½ìˆ˜ë¥¼ êµ¬í•œ í›„
+    //ë‚˜ì˜¨ ìµœëŒ€ê³µì•½ìˆ˜ì™€ ë’· ì›ì†Œë“¤ì˜ ìµœëŒ€ê³µì•½ìˆ˜ë¥¼ êµ¬í•˜ë©´ ë¨
 
     for (int i = 1; i < N; i++) {
         int b = abs(A[i] - S);
@@ -27,7 +27,7 @@ int howsD(vector<int>& A, int N, int S) {
 int main() {
     int N, S;
     cin >> N >> S;
-    vector <int> A(N); //µ¿»ýÀÇ À§Ä¡ ´ãÀ» ¹è¿­
+    vector <int> A(N); //ë™ìƒì˜ ìœ„ì¹˜ ë‹´ì„ ë°°ì—´
 
     for (int i = 0; i < N; i++) {
         cin >> A[i];
