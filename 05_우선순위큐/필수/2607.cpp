@@ -41,7 +41,7 @@ bool wordCount(vector<int>& count, string& word) {
     }
 
     else if (vectorCount == 2) {
-        if ((abs(tempCount[not0Check1]) == 1) && (abs(tempCount[not0Check2]) == 1)) {
+        if ((abs(tempCount[not0Check1]) == 1) && (tempCount[not0Check1] + tempCount[not0Check2] == 0)) {
             isSame = true;
 
         }
