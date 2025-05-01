@@ -10,7 +10,7 @@ struct container {
 	bool isRobot = false;
 };
 
-//º§Æ®°¡ °¢ Ä­ À§ÀÇ ·Îº¿°ú ÇÔ²² ÇÑ Ä­ È¸Àü
+//ë²¨íŠ¸ê°€ ê° ì¹¸ ìœ„ì˜ ë¡œë´‡ê³¼ í•¨ê»˜ í•œ ì¹¸ íšŒì „
 void firstRound(int n, vector <container> &all) {
 	container tmp = all[2 * n - 1];
 	
@@ -19,20 +19,20 @@ void firstRound(int n, vector <container> &all) {
 	}
 	all[0] = tmp;
 
-	//È¸Àü ÈÄ ³»¸®´Â À§Ä¡¿¡ ·Îº¿ ÀÖ³ª Ã¼Å©...
+	//íšŒì „ í›„ ë‚´ë¦¬ëŠ” ìœ„ì¹˜ì— ë¡œë´‡ ìˆë‚˜ ì²´í¬...
 	if (all[n-1].isRobot)
 		all[n-1].isRobot = false;
 }
 
-//·Îº¿ ÀÌµ¿
+//ë¡œë´‡ ì´ë™
 void secondRound(int n, vector <container> &all) {
 	for (int i = n - 2; i > 0; i--) {
-		//¸ÕÀú ¿Ã¶ó¿Â ·Îº¿ºÎÅÍ ºÁ¾ß ÇÏ´Ï±î ¿ª¼øÀ¸·Î
+		//ë¨¼ì € ì˜¬ë¼ì˜¨ ë¡œë´‡ë¶€í„° ë´ì•¼ í•˜ë‹ˆê¹Œ ì—­ìˆœìœ¼ë¡œ
 		if (all[i].isRobot && !all[i+1].isRobot && all[i+1].hp>=1) {
 			all[i].isRobot = false;
 			all[i + 1].hp--;
 
-			if (i + 1 == n-1) { //ÇÑ Ä­ ÀÌµ¿ÇßÀ» ¶§ ³»¸®´Â À§Ä¡¶ó¸é
+			if (i + 1 == n-1) { //í•œ ì¹¸ ì´ë™í–ˆì„ ë•Œ ë‚´ë¦¬ëŠ” ìœ„ì¹˜ë¼ë©´
 				all[i + 1].isRobot = false;
 			} 
 			else
@@ -42,7 +42,7 @@ void secondRound(int n, vector <container> &all) {
 
 }
 
-//·Îº¿ ¿Ã¸®±â
+//ë¡œë´‡ ì˜¬ë¦¬ê¸°
 void thirdRound(int n, vector <container>& all) {
 	if (all[0].hp > 0) {
 		all[0].isRobot = true;
@@ -50,7 +50,7 @@ void thirdRound(int n, vector <container>& all) {
 	}
 }
 
-//Á¾·áÁ¶°Ç... ³»±¸µµ Ã¼Å©
+//ì¢…ë£Œì¡°ê±´... ë‚´êµ¬ë„ ì²´í¬
 bool countHP(int n,int k, vector <container>& all) {
 	int count = 0;
 	for (int i = 0; i < 2*n; i++) {
